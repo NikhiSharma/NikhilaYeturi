@@ -1,8 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+  </style>
+  <script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+    </script>
   <meta charset="utf-8">
-  <title>Nikhila Yeturi Resume</title>
+  <title>Nikhila Yeturi</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -37,7 +98,7 @@
   <!--/ Nav Star /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">About me</a>
+      <a class="navbar-brand js-scroll" href="#page-top">Home</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -46,26 +107,29 @@
       </button>
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll active" href="#home">Home</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="#service">Services</a>
+            <a class="nav-link js-scroll" href="#service">Skill set</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#experience">Experiences</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#testimonials">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="https://yeturinikhila.blogspot.com/" target="_blank">Blog</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="Nikhila_Resume.pdf" target="_blank">Resume</a>
+            <a class="nav-link js-scroll" href="https://yeturinikhila.blogspot.com/" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" style="position: absolute; left: 80px; color: aqua;" href="Nikhila_Resume.pdf" target="_blank">download Resume</a>
           </li>
         </ul>
       </div>
@@ -81,7 +145,7 @@
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4">I am Nikhila Yeturi</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Software Engineer,Web Designer,Frontend Developer,Blogger,Artist, Author</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Software Engineer,Web Designer,Blogger,Artist, Author</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -102,43 +166,13 @@
                       <img src="img/nikki.jpg" class="img-fluid rounded b-shadow-a" alt="">
                     </div>
                   </div>
-                  <div class="col-sm-6 col-md-7">
-                    <div class="about-info">
-                      <p><span class="title-s">Name: </span> <span>Nikhila Yeturi</span></p>
-                      <p><span class="title-s">Profile: </span> <span>Full Stack Developer, Author</span></p>
-                      <p><span class="title-s">Email: </span> <span>nikhsharma23@gmail.com</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-mf">
-                  <p class="title-s">Skill</p>
-                  <span>Full Stack Development</span> <span class="pull-right">70%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>Deep Learning</span> <span class="pull-right">75%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>Android app development</span> <span class="pull-right">50%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>Blogging</span> <span class="pull-right">60%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      About me
+                      About 
                     </h5>
                   </div>
                   <p class="lead">
@@ -164,7 +198,60 @@
     </div>
   </section>
 
+  <div class="section-counter paralax-mf bg-image" style="background-image: url(img/counters-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">12</p>
+              <span class="counter-text">PROJECTS COMPLETED</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">2</p>
+              <span class="counter-text">YEARS OF FULLTIME EXPERIENCE</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ios-people"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">7</p>
+              <span class="counter-text">MONTHS OF RESEARCH EXPERIENCE</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">3</p>
+              <span class="counter-text">AWARDS WON</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--/ Section Services Star /-->
+  <br>
+  <br>
   <section id="service" class="services-mf route">
     <div class="container">
       <div class="row">
@@ -267,59 +354,83 @@
       </div>
     </div>
   </section>
-  <!--/ Section Services End /-->
 
-  <div class="section-counter paralax-mf bg-image" style="background-image: url(img/counters-bg.jpg)">
-    <div class="overlay-mf"></div>
+  <section id="experience" class="services-mf route">
+    <div class="title-box text-center">
+      <h3 class="title-a">
+        Experiences
+      </h3>
+      <p class="subtitle-a">
+        The below are my active skills.
+      </p>
+      <div class="line-mf"></div>
+    </div>
     <div class="container">
-      <div class="row">
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">12</p>
-              <span class="counter-text">PROJECTS COMPLETED</span>
-            </div>
-          </div>
+    <div class="row">
+    <div class="col-md-4">
+      <div class="service-box">
+        <div class="service-ico">
+          <span class="ico-circle"><i class="ion-monitor"></i></span>
         </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">2</p>
-              <span class="counter-text">YEARS OF FULLTIME EXPERIENCE</span>
-            </div>
-          </div>
+        <div class="service-content">
+          <h2 class="s-title">Projects</h2>
+          <br>
+          <a href="#nik"> Suicide analysis with Machine Learning </a>
+          <br>
+          <a href="#nik"> Interactive discord bot which plays audio with provided link </a>
+          <br>
+          <a href="#nik"> Sentiment Analysis with Natural Language Processing </a>
+          <br>
+          <a href="#nik"> Identifying Breast Cancer using Machine Learning </a>
+          <br>
+          <a href="#nik"> Crime awareness chat-bot </a>
+          <br>
+          <a href="#nik"> Music Recommendations using Machine Learning </a>
         </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ios-people"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">7</p>
-              <span class="counter-text">MONTHS OF RESEARCH EXPERIENCE</span>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-box">
+        <div class="service-ico">
+          <span class="ico-circle"><i class="ion-code-working"></i></span>
         </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">3</p>
-              <span class="counter-text">AWARDS WON</span>
-            </div>
-          </div>
+        <div class="service-content">
+          <h2 class="s-title">Community Service</h2>
+          <p class="s-description text-center">
+            <a href = "#nik" onclick="return confirm('Click on another OK to continue.');"> Voice4Girls</a>   
+            <br>
+            <a href = "#nik"> Kalam Bharat</a>   
+            <br>
+        </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-box">
+        <div class="service-ico">
+          <span class="ico-circle"><i class="ion-camera"></i></span>
+        </div>
+        <div class="service-content">
+          <h2 class="s-title">Work Experience</h2>
+            <a href = "#nik"> Machine Learning Intern at Verzeo </a>   
+            <br>
+            <a href = "#nik"> EPAM PEP Mentee</a>   
+            <br>
+            <a href = "#nik"> Coding Ninjas</a>   
+            <br>
+            <a href = "#nik"> Opentext</a>   
+            <br>
+            <a href = "#nik"> Optum</a>   
+            <br>
+            <br>
         </div>
       </div>
     </div>
   </div>
+    </div>
+  </section>
+
+  <!--/ Section Services End /-->
 
   <!--/ Section Testimonials Star /-->
   <div id="testimonials" class="testimonials paralax-mf bg-image" style="background-image: url(img/overlay-bg.jpg)">
@@ -431,7 +542,6 @@
                       Please do message if you'd like to know more about me. The following are the means of communications of mine. 
                     </p>
                     <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span> L.B Nagar, Hyderabad, 500074.</li>
                       <li><span class="ion-email"></span> nikhsharma23@gmail.com</li>
                     </ul>
                   </div>
