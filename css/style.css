@@ -681,7 +681,7 @@ a:hover {
 }
 
 .about-mf .about-img img {
-  margin-left: 130px;
+  margin-left: 130px !important;
 }
 
 .skill-mf span {
